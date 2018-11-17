@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 3
+   Case Problem 4
+
+   Park City Gazette Style Sheet
+   Author: Christian Gregorio
+   Date:   10.25.18
+
+   Filename:pcg_paper.css
+   Supporting Files: 
+
+*/
+
+/* 
+* {
+  border:1px solid red;
+} */
+
+
+/* 
+Everything after the background-color sets the words to have different qualities. The font is set to Georgia, but also to other fonts in case the web browser cannot display them. Small-caps displays everything as capital letters, with the first letter of each sentence being slightly bigger than the rest.
+*/
+html {
+    background: #3494E6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #EC6EAD, #3494E6);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #EC6EAD, #3494E6);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1em;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 
+The viewport in the page specified by the instructions is 640px to 960px, so the widths of them are set. To ensure that the body is centered in the html, both of the margins are set to auto.
+*/
+body {
+    border: 3px solid black;
+    background-color: white;
+    width: 90%;
+    height: 100%;
+    min-width: 640px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 
+These two set the two images to sizes equal to 100%, allowing them both to fill up the space of the header.
+*/
+header #limg {
+    float: left;
+    width: 85%;
+}
+
+header #rimg {
+    float: left;
+    width: 15%;
+}
+
+/* 
+This is here to prevent container collapse. It adds invisible content in the page after the header, which does not display unless both sides are void of content. This tricks the page into thinking there is content after floated elements, making sure that the background color does not clip off the content.
+*/
+header::after {
+    clear: both;
+    content: "";
+    display: table;
+    width: 100%;
+}
+
+aside li {
+    display: block;
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+
+/* 
+This removes discs from list items inside the text.
+*/
+nav ul li {
+    list-style-type: none;
+}
+
+/* 
+These style rules ensure that links that are visited and links that have been unvisited look the same, and when links are hovered over they change color and become underlined.
+*/
+ul li a:link,
+ul li a:visited {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+ul li a:hover,
+ul li a:active {
+    color: hsla(0, 0%, 50%, 0.8);
+    text-decoration: underline;
+}
+
+
+/* 
+This surrounds every row specified by the class by a column with a small, black border.
+*/
+div.row {
+    width: 100%;
+    clear: both;
+    border: 1px solid black
+}
+
+/* 
+This adds invisible content after the row to ensure that container collapse doesn't occur on floated elements. It tricks the website into thinking that there is content when there isn't, so the page renders the floated content as a non floated block element due to the invisible content.
+*/
+.row::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+div.row>div.col-1-2 {
+    width: 49%;
+    text-align: center;
+    padding-left: 0.25%;
+    padding-right: 0.25%;
+    float: left;
+}
+
+/* 
+The text in every other div will be either dark blue or dark red.
+*/
+div.row:nth-of-type(even) {
+    color: hsla(246, 81%, 23%, 0.8);
+}
+
+div.row:nth-of-type(odd) {
+    color: hsla(0, 81%, 23%, 0.8);
+}
+
+/* 
+Relative to the div it is inside of, the cougar image moves to the bottom right corner.
+*/
+#cougar {
+    position: relative;
+    top: 3px;
+    left: 198px;
+}
+
+.col-1-2 img {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    text-align: center;
+}
+
+/* 
+The following style makes the entire div styles move to the left with the class col-1-4. This lines them up side by side.
+*/
+div.col-1-4 {
+    display: block;
+    float: left;
+    width: 25%;
+    text-align: center
+}
+
+/* 
+Because of the previous style, the list items all move to the left, which stacks them horizontally, making 2 rows for close to five links. I wanted them on top of each other without discs, so I removed the discs and the float, causing them to display on top of one another.
+*/
+div.col-1-4 li {
+    float: none;
+    list-style-type: none;
+}
+
+#twittericon {
+    filter: invert(1);
+}
