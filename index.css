@@ -43,6 +43,12 @@ html {
 /* 
 The viewport in the page specified by the instructions is 640px to 960px, so the widths of them are set. To ensure that the body is centered in the html, both of the margins are set to auto.
 */
+
+div.row img{
+    width:25%;
+    float: left;
+}
+
 body {
     border: 3px solid black;
     background-color: white;
@@ -59,12 +65,13 @@ These two set the two images to sizes equal to 100%, allowing them both to fill 
 */
 header #limg {
     float: left;
-    width: 85%;
+    width: 60%;
 }
 
 header #rimg {
+    clear: right;
     float: left;
-    width: 15%;
+    width: 40%;
 }
 
 /* 
@@ -166,6 +173,12 @@ footer {
 /* 
 The following style makes the entire div styles move to the left with the class col-1-4. This lines them up side by side.
 */
+div.col-3-4 {
+    display: block;
+    float: left;
+    width: 75%;
+    text-align: center
+}
 div.col-1-4 {
     display: block;
     float: left;
@@ -183,4 +196,8 @@ div.col-1-4 li {
 
 #twittericon {
     filter: invert(1);
+}
+article img{
+    margin-right: auto;
+    margin-left: auto;
 }
